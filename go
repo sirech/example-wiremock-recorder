@@ -13,7 +13,7 @@ goal_run-production() {
 }
 
 goal_test-unit() {
-  ./gradlew test
+  ./gradlew clean test
 }
 
 goal_help() {

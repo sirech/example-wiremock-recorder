@@ -5,6 +5,7 @@ import com.github.tomakehurst.wiremock.recording.SnapshotRecordResult;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,6 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Category(IntegrationTest.class)
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class JsonPlaceholderIntegrationTest {

@@ -35,3 +35,13 @@ dependencies {
 
   testCompile('com.github.tomakehurst:wiremock:2.18.0')
 }
+
+test {
+    useJUnit {
+        excludeCategories 'com.hceris.recorder.IntegrationTest'
+    }
+
+    testLogging {
+        events "PASSED", "SKIPPED", "FAILED"
+    }
+}
