@@ -9,7 +9,7 @@ public abstract class RecordedTest {
 
     @Before
     public void setUp() throws Exception {
-        server = new WireMockServer();
+        server = new WireMockServer(8081);
         server.start();
     }
 
