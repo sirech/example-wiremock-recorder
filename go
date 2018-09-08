@@ -8,6 +8,10 @@ goal_run() {
   ./gradlew bootRun
 }
 
+goal_run-production() {
+  SPRING_PROFILES_ACTIVE=production ./gradlew bootRun
+}
+
 goal_test-unit() {
   ./gradlew test
 }
@@ -18,7 +22,10 @@ goal_help() {
     goal:
 
     build                    -- Build the deployable artifacts
+
     run                      -- Start the backend application
+    run-production           -- Start the application without mocks
+
     test-unit                -- Run unit tests
     "
   exit 1

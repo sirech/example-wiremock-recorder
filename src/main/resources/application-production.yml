@@ -1,0 +1,3 @@
+server:
+  port: 9001
+serverUrl: https://jsonplaceholder.typicode.com
