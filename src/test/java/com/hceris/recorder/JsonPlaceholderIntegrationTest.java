@@ -38,4 +38,8 @@ public class JsonPlaceholderIntegrationTest {
        assertThat(subject.todos()).isNotNull();
     }
 
+    @Test
+    public void todo() {
+        assertThat(subject.todo(1)).isNotNull();
+    }
 }

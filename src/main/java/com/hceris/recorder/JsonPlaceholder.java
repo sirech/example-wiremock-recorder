@@ -15,4 +15,9 @@ public class JsonPlaceholder {
          ResponseEntity<JsonNode> response = template.getForEntity("/todos", JsonNode.class);
          return response.getBody();
     }
+
+    public JsonNode todo(int id) {
+        ResponseEntity<JsonNode> response = template.getForEntity("/todos/{id}", JsonNode.class, id);
+        return response.getBody();
+    }
 }
