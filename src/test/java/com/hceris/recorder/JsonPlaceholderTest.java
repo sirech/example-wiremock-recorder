@@ -1,9 +1,6 @@
 package com.hceris.recorder;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.github.tomakehurst.wiremock.WireMockServer;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,22 +11,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class JsonPlaceholderTest {
+public class JsonPlaceholderTest extends RecordedTest {
     @Autowired
     JsonPlaceholder subject;
-
-    WireMockServer server;
-
-    @Before
-    public void setUp() throws Exception {
-        server = new WireMockServer();
-        server.start();
-    }
-
-    @After
-    public void tearDown() throws Exception {
-        server.stop();
-    }
 
     @Test
     public void todos() {
