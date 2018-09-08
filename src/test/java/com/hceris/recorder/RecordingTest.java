@@ -12,6 +12,9 @@ public abstract class RecordingTest {
     @Value("${recordingServerUrl}")
     private String recordingServerUrl;
 
+    @Value("${persistRecordings}")
+    private boolean persistRecordings;
+
     private WireMockServer server;
 
     @Before
@@ -30,7 +33,11 @@ public abstract class RecordingTest {
     private RecordSpec config() {
         return recordSpec()
                 .forTarget(recordingServerUrl)
-                .makeStubsPersistent(false)
+                .makeStubsPersistent(persistRecordings)
+                // _files are always saved to disk, so we need to put
+                // everything on the main request for makeStubsPersistent
+                // to work properly
+                .extractTextBodiesOver(10000000)
                 .build();
     }
 }
