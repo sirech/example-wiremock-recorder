@@ -16,6 +16,10 @@ goal_test-unit() {
   ./gradlew clean test
 }
 
+goal_test-integration() {
+  ./gradlew clean integration
+}
+
 goal_help() {
   echo "usage: $0 <goal>
 

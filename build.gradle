@@ -45,3 +45,10 @@ test {
         events "PASSED", "SKIPPED", "FAILED"
     }
 }
+
+task integration(type: Test) {
+    useJUnit {
+        includeCategories 'com.hceris.recorder.IntegrationTest'
+    }
+
+}
