@@ -14,7 +14,7 @@ public class RestTemplateConfiguration {
     }
 
     private RestTemplate setBaseUrl(RestTemplate template) {
-        DefaultUriBuilderFactory handler = new DefaultUriBuilderFactory("https://jsonplaceholder.typicode.com/");
+        DefaultUriBuilderFactory handler = new DefaultUriBuilderFactory("http://localhost:8080");
         template.setUriTemplateHandler(handler);
         return template;
     }

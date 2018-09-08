@@ -32,4 +32,6 @@ dependencies {
 
   annotationProcessor('org.projectlombok:lombok')
 	compileOnly('org.projectlombok:lombok')
+
+  testCompile('com.github.tomakehurst:wiremock:2.18.0')
 }
