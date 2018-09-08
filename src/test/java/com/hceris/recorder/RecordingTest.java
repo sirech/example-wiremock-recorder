@@ -5,7 +5,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.springframework.beans.factory.annotation.Value;
 
-public abstract class BaseIntegrationTest {
+public abstract class RecordingTest {
     @Value("${recordingServerUrl}")
     private String recordingServerUrl;
 

@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Category(IntegrationTest.class)
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class JsonPlaceholderIntegrationTest extends BaseIntegrationTest {
+public class JsonPlaceholderIntegrationTest extends RecordingTest {
     @Autowired
     JsonPlaceholder subject;
 
