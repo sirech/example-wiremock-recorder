@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -15,6 +16,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class JsonPlaceholderIntegrationTest {
+    @Value("${recordingServerUrl}")
+    String recordingServerUrl;
+
     @Autowired
     JsonPlaceholder subject;
 
@@ -24,7 +28,7 @@ public class JsonPlaceholderIntegrationTest {
     public void setUp() throws Exception {
         server = new WireMockServer();
         server.start();
-        server.startRecording("https://jsonplaceholder.typicode.com/");
+        server.startRecording(recordingServerUrl);
     }
 
     @After
