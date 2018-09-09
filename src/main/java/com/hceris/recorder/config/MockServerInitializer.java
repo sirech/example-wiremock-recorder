@@ -1,4 +1,4 @@
-package com.hceris.recorder;
+package com.hceris.recorder.config;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import org.springframework.beans.factory.annotation.Value;
