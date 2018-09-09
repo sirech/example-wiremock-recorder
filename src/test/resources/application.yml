@@ -1,3 +1,4 @@
 serverUrl: http://localhost:8081
 recordingServerUrl: https://jsonplaceholder.typicode.com
 persistRecordings: false
+extractBody: 10000000

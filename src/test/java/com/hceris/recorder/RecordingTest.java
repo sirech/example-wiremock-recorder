@@ -15,6 +15,9 @@ public abstract class RecordingTest {
     @Value("${persistRecordings}")
     private boolean persistRecordings;
 
+    @Value("${extractBody}")
+    private int extractBody;
+
     private WireMockServer server;
 
     @Before
@@ -37,7 +40,7 @@ public abstract class RecordingTest {
                 // _files are always saved to disk, so we need to put
                 // everything on the main request for makeStubsPersistent
                 // to work properly
-                .extractTextBodiesOver(10000000)
+                .extractTextBodiesOver(extractBody)
                 .build();
     }
 }
