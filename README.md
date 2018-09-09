@@ -32,3 +32,28 @@ This is a chart of how it looks like
 
 ![Run](./images/run.png)
 
+## Tests
+
+There are two test targets available
+
+### Unit tests
+
+these are regular unit tests, that do not any request to the outside. Instead they use the mocks that are stored in the repo. Run the tests with `./go test-unit`.
+
+These tests can be used to test all the functionality of the app while knowing that the test data comes from a real source.
+
+### Integration tests
+
+these are integration tests, that run against the actual API. They can be run with `./go test-integration`.
+
+These tests are not intended to test the functionality of our code in detail, but rather to make sure the integration between our app and the external API is working correctly.
+
+### Why the separation?
+
+Following the [Testing Pyramid](https://martinfowler.com/bliki/TestPyramid.html), we want to have most of our tests at the lowest possible level. In the case of the [JsonPlaceholder](./src/main/java/com/hceris/recorder/JsonPlaceholder.java), testing it requires mocks, as it would otherwise do a network request.
+
+Thanks to _WireMock_, this process is very convenient and almost transparent to the app. The base cases can be tested with mocks that come from a real source. Other scenarios, such as errors, can be explicitly simulated on top.
+
+The testing setup can be seen here:
+
+![Test](./images/test.png)
