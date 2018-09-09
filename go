@@ -20,6 +20,10 @@ goal_test-integration() {
   ./gradlew clean integration
 }
 
+goal_refresh-recordings() {
+  PERSISTRECORDINGS=true EXTRACTBODY=0 ./gradlew clean integration
+}
+
 goal_help() {
   echo "usage: $0 <goal>
 
@@ -31,6 +35,9 @@ goal_help() {
     run-production           -- Start the application without mocks
 
     test-unit                -- Run unit tests
+    test-integration         -- Run integration tests
+
+    refresh-recordings       -- Recreate recordings
     "
   exit 1
 }

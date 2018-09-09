@@ -37,9 +37,6 @@ public abstract class RecordingTest {
         return recordSpec()
                 .forTarget(recordingServerUrl)
                 .makeStubsPersistent(persistRecordings)
-                // _files are always saved to disk, so we need to put
-                // everything on the main request for makeStubsPersistent
-                // to work properly
                 .extractTextBodiesOver(extractBody)
                 .build();
     }
