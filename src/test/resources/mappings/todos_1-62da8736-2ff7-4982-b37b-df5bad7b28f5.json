@@ -1,0 +1,34 @@
+{
+  "id" : "62da8736-2ff7-4982-b37b-df5bad7b28f5",
+  "name" : "todos_1",
+  "request" : {
+    "url" : "/todos/1",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "bodyFileName" : "todos_1-62da8736-2ff7-4982-b37b-df5bad7b28f5.json",
+    "headers" : {
+      "Date" : "Sun, 09 Sep 2018 00:02:46 GMT",
+      "Content-Type" : "application/json; charset=utf-8",
+      "Connection" : "keep-alive",
+      "Set-Cookie" : "__cfduid=dd58bbead2df2a4f766e64199f0c4c0081536451366; expires=Mon, 09-Sep-19 00:02:46 GMT; path=/; domain=.typicode.com; HttpOnly",
+      "X-Powered-By" : "Express",
+      "Vary" : "Origin, Accept-Encoding",
+      "Access-Control-Allow-Credentials" : "true",
+      "Cache-Control" : "public, max-age=14400",
+      "Pragma" : "no-cache",
+      "Expires" : "Sun, 09 Sep 2018 04:02:46 GMT",
+      "X-Content-Type-Options" : "nosniff",
+      "Etag" : "W/\"53-hfEnumeNh6YirfjyjaujcOPPT+s\"",
+      "Via" : "1.1 vegur",
+      "CF-Cache-Status" : "HIT",
+      "Expect-CT" : "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "Server" : "cloudflare",
+      "CF-RAY" : "457563513d66236c-FRA"
+    }
+  },
+  "uuid" : "62da8736-2ff7-4982-b37b-df5bad7b28f5",
+  "persistent" : true,
+  "insertionIndex" : 1
+}
