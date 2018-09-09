@@ -1,3 +1,6 @@
 server:
   port: 9000
-serverUrl: http://localhost:8080
+serverUrl: http://localhost:${mock.port}
+mock:
+  active: true
+  port: 8080

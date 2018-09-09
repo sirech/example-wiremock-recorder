@@ -1,4 +1,7 @@
 serverUrl: http://localhost:${record.port}
+mock:
+  active: false
+  port: 8080
 record:
   port: 8081
   proxyTo: https://jsonplaceholder.typicode.com
