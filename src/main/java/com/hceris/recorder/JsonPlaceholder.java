@@ -1,23 +1,31 @@
 package com.hceris.recorder;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 @Component
 public class JsonPlaceholder {
     @Autowired
     RestTemplate template;
 
-    public JsonNode todos() {
-         ResponseEntity<JsonNode> response = template.getForEntity("/todos", JsonNode.class);
-         return response.getBody();
+    public List<Todo> todos() {
+        ResponseEntity<List<Todo>> response = template.exchange(
+                "/todos",
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<List<Todo>>() {
+                });
+        return response.getBody();
     }
 
-    public JsonNode todo(int id) {
-        ResponseEntity<JsonNode> response = template.getForEntity("/todos/{id}", JsonNode.class, id);
+    public Todo todo(int id) {
+        ResponseEntity<Todo> response = template.getForEntity("/todos/{id}", Todo.class, id);
         return response.getBody();
     }
 }

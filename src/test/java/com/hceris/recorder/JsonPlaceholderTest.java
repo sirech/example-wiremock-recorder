@@ -1,6 +1,5 @@
 package com.hceris.recorder;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +16,14 @@ public class JsonPlaceholderTest extends RecordedTest {
 
     @Test
     public void todos() {
-        assertThat(subject.todos()).isNotNull();
+        assertThat(subject.todos()).isNotEmpty();
     }
 
     @Test
     public void todo() {
-        JsonNode todo = subject.todo(1);
+        Todo todo = subject.todo(1);
+
         assertThat(todo).isNotNull();
+        assertThat(todo.getUserId()).isEqualTo(1);
     }
 }
