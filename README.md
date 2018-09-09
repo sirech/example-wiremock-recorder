@@ -57,3 +57,11 @@ Thanks to _WireMock_, this process is very convenient and almost transparent to 
 The testing setup can be seen here:
 
 ![Test](./images/test.png)
+
+## Regenerating the mocks
+
+A crucial part of this setup is having an easy, automated way of regenerating the mocks based on real data. Without an alignment between the mocks and the actual integrated environment, our unit tests are a lot less meaningful, as they might be testing something that does not match reality.
+
+If the process is not at least partially automated, it is less likely that it will be done often, and there is always the possibility of human error.
+
+Luckily _WireMock_ makes this super easy. In fact, we can use our integration tests to produce these recordings directly. We do not do this on every run, to avoid recreating stuff on each run, but rather provide an extra target. By running `./go refresh-recordings`, you will get fresh mock data that can be directly used by unit tests or the local development server. This is the last piece of the puzzle that closes the circle.
