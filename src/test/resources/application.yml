@@ -1,4 +1,6 @@
-serverUrl: http://localhost:8081
-recordingServerUrl: https://jsonplaceholder.typicode.com
-persistRecordings: false
-extractBody: 10000000
+serverUrl: http://localhost:${record.port}
+record:
+  port: 8081
+  proxyTo: https://jsonplaceholder.typicode.com
+  persist: false
+  extractBody: 10000000

@@ -21,7 +21,7 @@ goal_test-integration() {
 }
 
 goal_refresh-recordings() {
-  PERSISTRECORDINGS=true EXTRACTBODY=0 ./gradlew clean integration
+  RECORD_PERSIST=true RECORD_EXTRACTBODY=0 ./gradlew clean integration
 }
 
 goal_help() {

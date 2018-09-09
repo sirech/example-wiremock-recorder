@@ -9,20 +9,23 @@ import org.springframework.beans.factory.annotation.Value;
 import static com.github.tomakehurst.wiremock.client.WireMock.recordSpec;
 
 public abstract class RecordingTest {
-    @Value("${recordingServerUrl}")
+    @Value("${record.port}")
+    int port;
+
+    @Value("${record.proxyTo}")
     private String recordingServerUrl;
 
-    @Value("${persistRecordings}")
+    @Value("${record.persist}")
     private boolean persistRecordings;
 
-    @Value("${extractBody}")
+    @Value("${record.extractBody}")
     private int extractBody;
 
     private WireMockServer server;
 
     @Before
     public void setUp() throws Exception {
-        server = new WireMockServer(8081);
+        server = new WireMockServer(port);
         server.start();
         server.startRecording(config());
     }
