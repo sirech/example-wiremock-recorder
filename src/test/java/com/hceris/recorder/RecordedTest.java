@@ -18,13 +18,13 @@ public abstract class RecordedTest {
     WireMockServer server;
 
     @Before
-    public void setUp() throws Exception {
+    public void useMocks() throws Exception {
         server = new WireMockServer(port);
         server.start();
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void stopUsingMocks() throws Exception {
         server.stop();
     }
 }
