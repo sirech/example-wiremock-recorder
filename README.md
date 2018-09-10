@@ -9,6 +9,10 @@ This is a proof of concept to show how [WireMock](http://wiremock.org/) can be u
 - Have a way to easily refresh the test data in an automated way, to confirm that the mock data is compatible with the source
 - Use the same mocks for local development without any extra configuration or dependencies needed
 
+This is a diagram how it all ties together
+
+![Diagram](./images/diagram.png)
+
 ## App
 
 The app exposes two routes
@@ -27,10 +31,6 @@ the development serve runs against pre-recorded mocks that are stored in the rep
 ### Production mode
 
 To run the server using the real integration, use `./go run-production`, which starts the server under `localhost:9001`.
-
-This is a chart of how it looks like
-
-![Run](./images/run.png)
 
 ## Tests
 
@@ -53,10 +53,6 @@ These tests are not intended to test the functionality of our code in detail, bu
 Following the [Testing Pyramid](https://martinfowler.com/bliki/TestPyramid.html), we want to have most of our tests at the lowest possible level. In the case of the [JsonPlaceholder](./src/main/java/com/hceris/recorder/JsonPlaceholder.java), testing it requires mocks, as it would otherwise do a network request.
 
 Thanks to _WireMock_, this process is very convenient and almost transparent to the app. The base cases can be tested with mocks that come from a real source. Other scenarios, such as errors, can be explicitly simulated on top.
-
-The testing setup can be seen here:
-
-![Test](./images/test.png)
 
 ## Regenerating the mocks
 
