@@ -1,6 +1,7 @@
 buildscript {
     ext {
         springBootVersion = '2.0.4.RELEASE'
+        wiremockVersion = '2.23.2'
     }
     repositories {
         mavenCentral()
@@ -16,7 +17,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.hceris'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.2-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
@@ -33,7 +34,7 @@ dependencies {
     annotationProcessor('org.projectlombok:lombok')
     compileOnly('org.projectlombok:lombok')
 
-    compile('com.github.tomakehurst:wiremock:2.18.0')
+    compile("com.github.tomakehurst:wiremock:${wiremockVersion}")
 }
 
 test {
