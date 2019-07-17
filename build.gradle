@@ -1,13 +1,13 @@
 buildscript {
-	ext {
-		springBootVersion = '2.0.4.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    ext {
+        springBootVersion = '2.0.4.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
 apply plugin: 'java'
@@ -20,20 +20,20 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	runtime('org.springframework.boot:spring-boot-devtools')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    runtime('org.springframework.boot:spring-boot-devtools')
 
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 
-  annotationProcessor('org.projectlombok:lombok')
-	compileOnly('org.projectlombok:lombok')
+    annotationProcessor('org.projectlombok:lombok')
+    compileOnly('org.projectlombok:lombok')
 
-  compile('com.github.tomakehurst:wiremock:2.18.0')
+    compile('com.github.tomakehurst:wiremock:2.18.0')
 }
 
 test {
