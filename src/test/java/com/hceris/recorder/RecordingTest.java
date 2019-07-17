@@ -8,30 +8,39 @@ import org.springframework.beans.factory.annotation.Value;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.recordSpec;
 
+/**
+ * This class can be used as the base class for any test that will generate
+ * recordings using WireMock.
+ *
+ *
+ * It will automatically proxy the request through it. If [.persistRecordings] is set to true
+ * and [.extractBody] is set to 0, it will automatically store the records of the call
+ * in the `src/test/resources/mappings` folder
+ */
 public abstract class RecordingTest {
     @Value("${record.port}")
-    int port;
+    int port = 0;
 
     @Value("${record.proxyTo}")
     private String recordingServerUrl;
 
     @Value("${record.persist}")
-    private boolean persistRecordings;
+    private boolean persistRecordings = false;
 
     @Value("${record.extractBody}")
-    private int extractBody;
+    private int extractBody = 0;
 
     private WireMockServer server;
 
     @Before
-    public void setUp() throws Exception {
+    public void startRecording() throws Exception {
         server = new WireMockServer(port);
         server.start();
         server.startRecording(config());
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void stopRecording() throws Exception {
         server.stopRecording();
         server.stop();
     }
