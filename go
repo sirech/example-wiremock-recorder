@@ -21,6 +21,9 @@ goal_test-integration() {
 }
 
 goal_refresh-recordings() {
+  # shellcheck disable=SC2038
+  find src/test/resources/ -name '*.json' | xargs rm
+
   RECORD_PERSIST=true RECORD_EXTRACTBODY=0 ./gradlew clean integration
 }
 
