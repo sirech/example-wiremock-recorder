@@ -1,7 +1,8 @@
 buildscript {
     ext {
-        springBootVersion = '2.0.4.RELEASE'
+        springBootVersion = '2.1.6.RELEASE'
         wiremockVersion = '2.23.2'
+        lombokVersion = '1.18.8'
     }
     repositories {
         mavenCentral()
@@ -31,8 +32,8 @@ dependencies {
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
-    annotationProcessor('org.projectlombok:lombok')
-    compileOnly('org.projectlombok:lombok')
+    annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
+    compileOnly("org.projectlombok:lombok:${lombokVersion}")
 
     compile("com.github.tomakehurst:wiremock:${wiremockVersion}")
 }
