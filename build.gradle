@@ -1,7 +1,7 @@
 buildscript {
     ext {
         springBootVersion = '2.1.6.RELEASE'
-        wiremockVersion = '2.23.2'
+        wiremockVersion = '2.24.0'
         lombokVersion = '1.18.8'
     }
     repositories {
