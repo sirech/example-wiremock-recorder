@@ -21,8 +21,7 @@ public abstract class RecordingTest {
     @Value("${record.port}")
     int port = 0;
 
-    @Value("${record.proxyTo}")
-    private String recordingServerUrl;
+    abstract String recordingServerUrl();
 
     @Value("${record.persist}")
     private boolean persistRecordings = false;
@@ -47,9 +46,10 @@ public abstract class RecordingTest {
 
     private RecordSpec config() {
         return recordSpec()
-                .forTarget(recordingServerUrl)
+                .forTarget(recordingServerUrl())
                 .makeStubsPersistent(persistRecordings)
                 .extractTextBodiesOver(extractBody)
+                .captureHeader("Content-Type")
                 .build();
     }
 }

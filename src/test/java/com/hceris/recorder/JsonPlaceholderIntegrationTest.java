@@ -13,6 +13,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class JsonPlaceholderIntegrationTest extends RecordingTest {
+    @Override
+    String recordingServerUrl() {
+        return "https://jsonplaceholder.typicode.com";
+    }
+
     @Autowired
     JsonPlaceholder subject;
 
